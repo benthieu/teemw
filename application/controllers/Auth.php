@@ -5,12 +5,7 @@ class Auth extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
 		//$this->load->library('security');
-		$this->load->library('tank_auth');
-		$this->lang->load('tank_auth');
 	}
 
 	function index()
@@ -134,6 +129,10 @@ class Auth extends CI_Controller
 				$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length['.$this->config->item('username_min_length', 'tank_auth').']|max_length['.$this->config->item('username_max_length', 'tank_auth').']|alpha_dash');
 			}
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('tel', 'Telephone', 'trim|required');
+			$this->form_validation->set_rules('street', 'Rue, Nr', 'trim|required');
+			$this->form_validation->set_rules('address', 'Adresse', 'trim|required');
+			$this->form_validation->set_rules('zip_code', 'NPA', 'trim|required|numeric');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length['.$this->config->item('password_min_length', 'tank_auth').']|max_length['.$this->config->item('password_max_length', 'tank_auth').']|alpha_dash');
 			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|matches[password]');
 
@@ -155,7 +154,13 @@ class Auth extends CI_Controller
 						$use_username ? $this->form_validation->set_value('username') : '',
 						$this->form_validation->set_value('email'),
 						$this->form_validation->set_value('password'),
-						$email_activation))) {									// success
+						$email_activation,
+						$this->form_validation->set_value('first_name'),
+						$this->form_validation->set_value('last_name'),
+						$this->form_validation->set_value('tel'),
+						$this->form_validation->set_value('street'),
+						$this->form_validation->set_value('address'),
+						$this->form_validation->set_value('zip_code')))) {									// success
 
 					$data['site_name'] = $this->config->item('website_name', 'tank_auth');
 

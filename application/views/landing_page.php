@@ -1,3 +1,3 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><p>This is the landing page</p>
+?><p><?php echo lang('landing_page') ?></p>
