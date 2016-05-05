@@ -34,6 +34,9 @@ $captcha = array(
 );
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
+<div class="page-header">
+	<h1>Login Annonceur</h1>
+</div>
 <div class="input-group">
 		<?php echo form_label($login_label, $login['id']); ?><?php echo form_input($login); ?>
 		<span style="color: red;"><?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?></span>
