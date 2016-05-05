@@ -39,6 +39,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li <?php if ($class == 'auth') {
               echo 'class="active"';
             }?>><a href="/teemw/index.php/auth/">Login</a></li>
+            <li <?php if ($class == 'auth') {
+              echo 'class="active"';
+            }?>><a href="/teemw/index.php/auth/register_form.php">Register</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
