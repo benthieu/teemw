@@ -3,3 +3,8 @@
       width: 70%;
       margin: auto;
   }
+
+
+legend.scheduler-border {
+    text-align: center;
+}
