@@ -14,6 +14,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/default.css">
     <script type="text/javascript" src="<?php echo base_url(); ?>js/default.js"></script>
 	</head>
@@ -44,10 +47,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li <?php if ($class == 'demand') {
               echo 'class="active"';
             }?>><a href="/teemw/index.php/demand/">Make a demand</a></li>
-            <li <?php if ($class == 'auth') {
-              echo 'class="active"';
-            }?>><a href="/teemw/index.php/auth/">Register</a></li>
-
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/teemw/index.php/auth/">User</a></li>
+                <li><a href="/teemw/index.php/auth/">Transport</a></li>
+              </ul>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
