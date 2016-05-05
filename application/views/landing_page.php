@@ -2,9 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><div class="page-header"><h1><?php echo lang('landing_page') ?></h1>
 </div>
+
+
+
 <div class="container">
   <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide carousel-global" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -23,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
 
       <div class="item">
-        <img src="img/hand-truck.jpg" alt="hand-truck" width="460" height="345">
+        <img src="img/truck.jpg" alt="truck" width="460" height="345">
       </div>
     </div>
 

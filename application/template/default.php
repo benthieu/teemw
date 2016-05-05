@@ -50,11 +50,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/teemw/index.php/auth/">User</a></li>
+                <li><a href="/teemw/index.php/auth/register">User</a></li>
                 <li><a href="/teemw/index.php/auth/">Transport</a></li>
               </ul>
             </li>
           </ul>
+          <form class="navbar-form" role="search">
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Rechercher une annonce" name="q">
+                      <div class="input-group-btn">
+                          <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                      </div>
+                  </div>
+                  </form>
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>
