@@ -14,6 +14,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>css/default.css">
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/default.js"></script>
 	</head>
     <body role="document">
     <!-- Fixed navbar -->
@@ -52,3 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </nav>
 
     <div class="container theme-showcase" role="main" style="padding-top: 70px">
+      <?php /* load page view */ $this->load->basic_view($content_view); ?>
+    </div>
+  </body>
+</html>
