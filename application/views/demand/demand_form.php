@@ -37,16 +37,10 @@ $(document).ready(function() {
 	})
 })
 </script>
-<p><b>Faites votre choix: </b></p>
 <form name="form-inline" action="" method="post">
-	<div class="btn-group choice" role="group" aria-label="...">
-		<button type="button" class="btn btn-default" id="dem">Déménagement</button>
-		<button type="button" class="btn btn-default" id="veh">Véhicules</button>
-		<button type="button" class="btn btn-default" id="per">Personnes</button>
-		<button type="button" class="btn btn-default" id="obj">Objets divers</button>
-	</div>
 	<div class="row">
 		<div class="col-md-6">
+			<h2>départ</h2>
 		  <div class="form-group">
 					<?php echo form_label('Rue, Nr', $street['id']); ?><?php echo form_input($street); ?>
 					<span style="color: red;"><?php echo form_error($street['name']); ?><?php echo isset($errors[$street['name']])?$errors[$street['name']]:''; ?></span>
@@ -65,6 +59,7 @@ $(document).ready(function() {
 		  </div>
 		</div>
 		<div class="col-md-6">
+			<h2>arrivée</h2>
 		  <div class="form-group">
 					<?php echo form_label('Rue, Nr', $street['id']); ?><?php echo form_input($street); ?>
 					<span style="color: red;"><?php echo form_error($street['name']); ?><?php echo isset($errors[$street['name']])?$errors[$street['name']]:''; ?></span>
@@ -82,6 +77,13 @@ $(document).ready(function() {
 					<span style="color: red;"><?php echo form_error($zip_code['name']); ?><?php echo isset($errors[$zip_code['name']])?$errors[$zip_code['name']]:''; ?></span>
 		  </div>
 		</div>
+	</div>
+	<p><b>Faites votre choix: </b></p>
+	<div class="btn-group choice" role="group" aria-label="...">
+		<button type="button" class="btn btn-default btn-lg" id="dem"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Déménagement</button>
+		<button type="button" class="btn btn-default btn-lg" id="veh"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>  Véhicules</button>
+		<button type="button" class="btn btn-default btn-lg" id="per"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Personnes</button>
+		<button type="button" class="btn btn-default btn-lg" id="obj"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>  Objets divers</button>
 	</div>
 	<div class="div_dem div_demand">
     <div class="form-group">

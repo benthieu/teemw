@@ -25,6 +25,7 @@ class MY_Loader extends CI_Loader {
 		$CI =& get_instance();
 
 		$vars['content_view'] = $view;
+		$vars['is_logged'] = $CI->tank_auth->is_logged_in();
 		// finally load view!
 		if ($this->template !== FALSE) {
 			return parent::view('../template/'.$this->template, $vars, $return);

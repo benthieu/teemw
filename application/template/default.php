@@ -37,23 +37,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <ul class="nav navbar-nav">
             <?php
             $class = $this->router->fetch_class();
+            $method = $this->router->fetch_method();
             ?>
-            <li <?php if ($class == 'landing_page') {
+              <li <?php if ($class == 'landing_page') {
                 echo 'class="active"';
               }?>><a href="/teemw/index.php">Home</a></li>
-            <li <?php if ($class == 'auth') {
-              echo 'class="active"';
-            }?>><a href="/teemw/index.php/auth/">Login</a></li>
-            <li <?php if ($class == 'demand') {
-              echo 'class="active"';
-            }?>><a href="/teemw/index.php/demand/">Make a demand</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/teemw/index.php/auth/register">User</a></li>
-                <li><a href="/teemw/index.php/auth/">Transport</a></li>
-              </ul>
-            </li>
+            <?php
+            if ($is_logged) {
+            ?>
+              <li <?php if ($class == 'demand') {
+                echo 'class="active"';
+              }?>><a href="/teemw/index.php/demand/">Make a demand</a></li>
+            <?php
+            }
+            else {
+            ?>
+              <li <?php if ($class == 'auth' && $method == 'login') {
+                echo 'class="active"';
+              }?>><a href="/teemw/index.php/auth/">Login</a></li>
+              <li class="dropdown <?php if ($class == 'auth' && ($method == 'register' || $method == 'register_transp')) {
+                echo 'active';
+              }?>">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li <?php if ($class == 'auth' && $method == 'register') {
+                    echo 'class="active"';
+                  }?>><a href="/teemw/index.php/auth/register">User</a></li>
+                  <li <?php if ($class == 'auth' && $method == 'register_transp') {
+                    echo 'class="active"';
+                  }?>><a href="/teemw/index.php/auth/register_transp">Transport</a></li>
+                </ul>
+              </li>
+            <?php
+            }
+            ?>
           </ul>
           <form class="navbar-form" role="search">
             <div class="input-group">
