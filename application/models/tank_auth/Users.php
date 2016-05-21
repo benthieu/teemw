@@ -139,6 +139,27 @@ class Users extends CI_Model
 	}
 
 	/**
+	 * modify user record
+	 *
+	 * @param	array
+	 * @param	bool
+	 * @return	array
+	 */
+	function modify_user($data)
+	{
+		//$data['created'] = date('Y-m-d H:i:s');
+		$data['activated'] = 1;
+		$this->db->where('id', $this->tank_auth->get_user_id());
+		if ($this->db->update($this->table_name, $data)) {
+			$user_id = $this->db->insert_id();
+			return array('user_id' => $user_id);
+		}
+		return NULL;
+	}
+
+
+
+	/**
 	 * Activate user if activation key is valid.
 	 * Can be called for not activated users only.
 	 *
