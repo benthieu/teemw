@@ -312,14 +312,12 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+			$data['user'] = $this->users->get_user_by_id($this->tank_auth->get_user_id());
 			$data['use_username'] = $use_username;
 			$data['captcha_registration'] = $captcha_registration;
 			$data['use_recaptcha'] = $use_recaptcha;
 
-			$view = 'auth/register_form';
-			if ($register_transp) {
-				$view = 'auth/register_trans';
-			}
+			$view = 'auth/change_user';
 			$this->load->view($view, $data);
 		}
 	}

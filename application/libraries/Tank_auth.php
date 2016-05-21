@@ -201,6 +201,38 @@ class Tank_auth
 	}
 
 	/**
+	 * modify user on the site and return some data about it:
+	 * user_id, username, password, email, new_email_key (if any).
+	 *
+	 * @param	string
+	 * @param	string
+	 * @param	string
+	 * @param	bool
+	 * @return	array
+	 */
+	function modify_user($username, $email, $first_name, $last_name, $tel, $street, $address, $zip_code)
+	{
+
+
+		$data = array(
+			'username'	=> $username,
+			'email'		=> $email,
+			'first_name' => $first_name,
+			'last_name' => $last_name,
+			'tel' => $tel,
+			'zip_code' => $zip_code,
+			'address' => $address,
+			'street' => $street,
+			'last_ip'	=> $this->ci->input->ip_address(),
+		);
+
+		if (!is_null($res = $this->ci->users->modify_user($data))) {
+			return $data;
+		}
+		return NULL;
+	}
+
+	/**
 	 * Check if username available for registering.
 	 * Can be called for instant form validation.
 	 *
