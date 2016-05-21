@@ -31,10 +31,9 @@ class Users extends CI_Model
 	 * @param	bool
 	 * @return	object
 	 */
-	function get_user_by_id($user_id, $activated)
+	function get_user_by_id($user_id)
 	{
 		$this->db->where('id', $user_id);
-		$this->db->where('activated', $activated ? 1 : 0);
 
 		$query = $this->db->get($this->table_name);
 		if ($query->num_rows() == 1) return $query->row();
@@ -87,6 +86,7 @@ class Users extends CI_Model
 		return NULL;
 	}
 
+
 	/**
 	 * Check if username available for registering
 	 *
@@ -137,6 +137,27 @@ class Users extends CI_Model
 		}
 		return NULL;
 	}
+
+	/**
+	 * modify user record
+	 *
+	 * @param	array
+	 * @param	bool
+	 * @return	array
+	 */
+	function modify_user($data)
+	{
+		//$data['created'] = date('Y-m-d H:i:s');
+		$data['activated'] = 1;
+		$this->db->where('id', $this->tank_auth->get_user_id());
+		if ($this->db->update($this->table_name, $data)) {
+			$user_id = $this->db->insert_id();
+			return array('user_id' => $user_id);
+		}
+		return NULL;
+	}
+
+
 
 	/**
 	 * Activate user if activation key is valid.

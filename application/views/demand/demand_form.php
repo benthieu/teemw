@@ -1,86 +1,117 @@
-<div id="header">
-  <?php echo ($info); ?>
-  <h1 style="text-align: center; text-decoration: underline;"><br />Choisissez votre type de transport</h1>
-
-  <script>
-
-  $(document).ready(function(){
-    $('#next').click(function(e){
-        console.log($('input[name=transport]:checked').val());
-        document.getElementById("formMove").style.display = "block";
-    });
-  });
+<?php
+$street = array(
+	'name'	=> 'street',
+	'id'	=> 'street',
+	'value'	=> set_value('street'),
+	'maxlength'	=> 80,
+	'size'	=> 30,
+	'class' => 'form-control',
+);
+$address = array(
+	'name'	=> 'address',
+	'id'	=> 'address',
+	'value'	=> set_value('address'),
+	'maxlength'	=> 80,
+	'size'	=> 30,
+	'class' => 'form-control',
+);
+$zip_code = array(
+	'name'	=> 'zip_code',
+	'id'	=> 'zip_code',
+	'value'	=> set_value('zip_code'),
+	'maxlength'	=> 80,
+	'size'	=> 30,
+	'class' => 'form-control',
+);
+?>
+<style type="text/css">
+	.div_demand {
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".btn-group.choice .btn").click(function() {
+		$(".div_demand").hide();
+		$(".div_"+$(this).attr("id")).show();
+	})
+})
 </script>
-<form name="typeOfTransport" method="post" >
-  <input type="radio" name="transport" value="move" /> <label for="transport">Déménagement</label>
-  <input type="radio" name="transport" value="vehicle" /> <label for="transport">Véhicule</label>
-  <input type="radio" name="transport" value="person" /> <label for="transport">Personnes</label>
-  <input type="radio" name="transport" value="objects" /> <label for="transport">Objets divers</label>
+<form name="form-inline" action="" method="post">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>départ</h2>
+		  <div class="form-group">
+					<?php echo form_label('Rue, Nr', $street['id']); ?><?php echo form_input($street); ?>
+					<span style="color: red;"><?php echo form_error($street['name']); ?><?php echo isset($errors[$street['name']])?$errors[$street['name']]:''; ?></span>
+				<br>
+					<?php echo form_label('NPA / Lieu ', $zip_code['id']); ?>
+					<div class="row">
+						<div class="col-md-4">
+							<?php echo form_input($zip_code); ?>
+						</div>
+						<div class="col-md-8">
+							<?php echo form_input($address); ?>
+						</div>
+					</div>
+					<span style="color: red;"><?php echo form_error($address['name']); ?><?php echo isset($errors[$address['name']])?$errors[$address['name']]:''; ?></span>
+					<span style="color: red;"><?php echo form_error($zip_code['name']); ?><?php echo isset($errors[$zip_code['name']])?$errors[$zip_code['name']]:''; ?></span>
+		  </div>
+		</div>
+		<div class="col-md-6">
+			<h2>arrivée</h2>
+		  <div class="form-group">
+					<?php echo form_label('Rue, Nr', $street['id']); ?><?php echo form_input($street); ?>
+					<span style="color: red;"><?php echo form_error($street['name']); ?><?php echo isset($errors[$street['name']])?$errors[$street['name']]:''; ?></span>
+				<br>
+					<?php echo form_label('NPA / Lieu ', $zip_code['id']); ?>
+					<div class="row">
+						<div class="col-md-4">
+							<?php echo form_input($zip_code); ?>
+						</div>
+						<div class="col-md-8">
+							<?php echo form_input($address); ?>
+						</div>
+					</div>
+					<span style="color: red;"><?php echo form_error($address['name']); ?><?php echo isset($errors[$address['name']])?$errors[$address['name']]:''; ?></span>
+					<span style="color: red;"><?php echo form_error($zip_code['name']); ?><?php echo isset($errors[$zip_code['name']])?$errors[$zip_code['name']]:''; ?></span>
+		  </div>
+		</div>
+	</div>
+	<p><b>Faites votre choix: </b></p>
+	<div class="btn-group choice" role="group" aria-label="...">
+		<button type="button" class="btn btn-default btn-lg" id="dem"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Déménagement</button>
+		<button type="button" class="btn btn-default btn-lg" id="veh"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>  Véhicules</button>
+		<button type="button" class="btn btn-default btn-lg" id="per"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Personnes</button>
+		<button type="button" class="btn btn-default btn-lg" id="obj"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>  Objets divers</button>
+	</div>
+	<div class="div_dem div_demand">
+    <div class="form-group">
+      <label for="exampleInputName2">Name</label>
+      <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail2">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+    </div>
+    <button type="submit" class="btn btn-default">Send invitation</button>
+	</div>
+
+	<div class="div_veh div_demand">
+		vehic
+		<label>Prénom de l'amateur <input type="text" /></label> <label>Département de l'amateur <input type="text" /></label>
+	</div>
+
+	<div class="div_per div_demand">
+		pers
+		<label>Nom de l'animalerie <input type="text" /></label> <label>Département de l'animalerie <input type="text" /></label>
+	</div>
+
+	<div class="div_obj div_demand">
+		obj
+		<label>Nom de l'association <input type="text" /></label> <label>Département de l'association <input type="text" /></label>
+	</div>
+
 </form>
-<button id="next"> Suivant </button>
-
-  <table id="formMove" class="tableInscription">
-    <form id="frmInscr" action="" method="post">
-      <tr>
-        <td>
-          <label for="email">Email:</label>
-        </td>
-        <td>
-          <input class="input" type="text" name="email" id="email" value="<?php if(isset($_POST["email"])) echo $_POST["email"]; ?>" />
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label for="prenom">Pr&eacute;nom:</label>
-        </td>
-        <td>
-          <input class="input" type="text" name="prenom" id="prenom" value="<?php if(isset($_POST["prenom"])) echo $_POST["prenom"]; ?>"/>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label for="nom">Nom:</label>
-        </td>
-        <td>
-          <input class="input" type="text" name="nom" id="nom" value="<?php if(isset($_POST["nom"])) echo $_POST["nom"]; ?>"/>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label for="mdp">Mot de passe:</label>
-        </td>
-        <td>
-          <input class="input" type="password" name="mdp" id="mdp" />
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label for="confirm">Confirmer:</label>
-        </td>
-        <td>
-          <input class="input" type="password" name="confirm" id="confirm" />
-        </td>
-      </tr>
-      <tr>
-        <td><br />  </td>
-      </tr>
-      <tr>
-        <td>
-          <br />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input style="border-radius: 4px;" class="input" type="submit" name="btInscr" id="btInscr" value="Inscription" />
-        </td>
-      </tr>
-    </form>
-  </table>
-</div>
-<div style="min-height: 140px;" id="content">
-
-</div>
+</body>
+</html>

@@ -19,9 +19,7 @@ class Demand extends MY_Controller {
 	public function index()
 	{
     if ($this->tank_auth->is_logged_in()) {
-        $this->load->view('header');
         $this->load->view('demand/demand_form');
-			  $this->load->view('footer');
     }else {
       redirect('/auth/login/');
     }

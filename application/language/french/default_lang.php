@@ -1,3 +1,3 @@
 <?php
 
-$lang['landing_page'] = 'Bonjour';
+$lang['landing_page'] = 'TEEMW - Transporter autrement';
