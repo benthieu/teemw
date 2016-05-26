@@ -151,8 +151,27 @@ $(document).ready(function() {
 	</div>
 
 	<div class="div_per div_demand">
-		pers
-		<label>Nom de l'animalerie <input type="text" /></label> <label>Département de l'animalerie <input type="text" /></label>
+    <div class="form-group col-md-3">
+      <label for="quant">Quantité</label>
+      <input type="number" class="form-control" id="quant" value="1">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="nbLug">Bagages</label>
+      <input type="number" class="form-control" id="nbLug" value="0">
+    </div>
+    <br />
+    <div class="form-group col-md-3">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mobilité réduite
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><a href="#">Oui</a></li>
+          <li><a href="#">Non</a></li>
+        </ul>
+    </div>
+    <div class="col-md-5"></div>
+    <button type="submit" class="btn btn-default">Envoyer la demande</button>
 	</div>
 
 	<div class="div_obj div_demand">
