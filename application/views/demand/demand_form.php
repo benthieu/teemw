@@ -37,6 +37,7 @@ $(document).ready(function() {
 	})
 })
 </script>
+<<<<<<< HEAD
 <div class="col-md-1"></div>
 <p><b>Faites votre choix: </b></p>
 <form name="form-inline" action="" method="post">
@@ -93,6 +94,55 @@ $(document).ready(function() {
   		</div>
     </fieldset>
     <div class="col-md-1"></div>
+=======
+<form name="form-inline" action="" method="post">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>départ</h2>
+		  <div class="form-group">
+					<?php echo form_label('Rue, Nr', $street['id']); ?><?php echo form_input($street); ?>
+					<span style="color: red;"><?php echo form_error($street['name']); ?><?php echo isset($errors[$street['name']])?$errors[$street['name']]:''; ?></span>
+				<br>
+					<?php echo form_label('NPA / Lieu ', $zip_code['id']); ?>
+					<div class="row">
+						<div class="col-md-4">
+							<?php echo form_input($zip_code); ?>
+						</div>
+						<div class="col-md-8">
+							<?php echo form_input($address); ?>
+						</div>
+					</div>
+					<span style="color: red;"><?php echo form_error($address['name']); ?><?php echo isset($errors[$address['name']])?$errors[$address['name']]:''; ?></span>
+					<span style="color: red;"><?php echo form_error($zip_code['name']); ?><?php echo isset($errors[$zip_code['name']])?$errors[$zip_code['name']]:''; ?></span>
+		  </div>
+		</div>
+		<div class="col-md-6">
+			<h2>arrivée</h2>
+		  <div class="form-group">
+					<?php echo form_label('Rue, Nr', $street['id']); ?><?php echo form_input($street); ?>
+					<span style="color: red;"><?php echo form_error($street['name']); ?><?php echo isset($errors[$street['name']])?$errors[$street['name']]:''; ?></span>
+				<br>
+					<?php echo form_label('NPA / Lieu ', $zip_code['id']); ?>
+					<div class="row">
+						<div class="col-md-4">
+							<?php echo form_input($zip_code); ?>
+						</div>
+						<div class="col-md-8">
+							<?php echo form_input($address); ?>
+						</div>
+					</div>
+					<span style="color: red;"><?php echo form_error($address['name']); ?><?php echo isset($errors[$address['name']])?$errors[$address['name']]:''; ?></span>
+					<span style="color: red;"><?php echo form_error($zip_code['name']); ?><?php echo isset($errors[$zip_code['name']])?$errors[$zip_code['name']]:''; ?></span>
+		  </div>
+		</div>
+>>>>>>> origin/master
+	</div>
+	<p><b>Faites votre choix: </b></p>
+	<div class="btn-group choice" role="group" aria-label="...">
+		<button type="button" class="btn btn-default btn-lg" id="dem"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Déménagement</button>
+		<button type="button" class="btn btn-default btn-lg" id="veh"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>  Véhicules</button>
+		<button type="button" class="btn btn-default btn-lg" id="per"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Personnes</button>
+		<button type="button" class="btn btn-default btn-lg" id="obj"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>  Objets divers</button>
 	</div>
 	<div class="div_dem div_demand">
     <div class="form-group col-md-3">
