@@ -39,6 +39,7 @@ $(document).ready(function() {
 </script>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="col-md-1"></div>
 <p><b>Faites votre choix: </b></p>
 <form name="form-inline" action="" method="post">
@@ -100,6 +101,9 @@ $(document).ready(function() {
 =======
 <form name="form-inline" action="" method="post">
 >>>>>>> origin/master
+=======
+<form name="form-inline" action="" method="post">
+>>>>>>> 60e685ae806fe7256286227f790c1cc2b1b35a63
 	<div class="row">
 		<div class="col-md-6">
 			<h2>départ</h2>
@@ -140,6 +144,13 @@ $(document).ready(function() {
 		  </div>
 		</div>
 >>>>>>> origin/master
+	</div>
+	<p><b>Faites votre choix: </b></p>
+	<div class="btn-group choice" role="group" aria-label="...">
+		<button type="button" class="btn btn-default btn-lg" id="dem"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Déménagement</button>
+		<button type="button" class="btn btn-default btn-lg" id="veh"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>  Véhicules</button>
+		<button type="button" class="btn btn-default btn-lg" id="per"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Personnes</button>
+		<button type="button" class="btn btn-default btn-lg" id="obj"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>  Objets divers</button>
 	</div>
 	<p><b>Faites votre choix: </b></p>
 	<div class="btn-group choice" role="group" aria-label="...">
