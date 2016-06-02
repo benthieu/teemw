@@ -46,10 +46,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
               <li <?php if ($class == 'demand') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/demand/">Make a demand</a></li>
+              }?>><a href="/teemw/index.php/demand/">Demander un transport</a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
                 echo 'active';
               }?>">
+              <li <?php if ($class == 'annonces') {
+                echo 'class="active"';
+              }?>><a href="/teemw/index.php/annonces/">Les annonces</a></li>
+              <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
+                echo 'active';
+              }?>">
+
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;User <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li <?php if ($class == 'auth' && $method == 'change_userdata') {

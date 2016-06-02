@@ -82,10 +82,7 @@ $confirm_password = array(
 	'class' => 'form-control',
 );
 ?>
-<?php echo form_open($this->uri->uri_string()); ?>
-<div class="page-header">
-	<h1>Enregistrement d'annonceur</h1>
-</div>
+
 <div class="input-group">
 	<?php if ($use_username) { ?>
 		<?php echo form_label('Username', $username['id']); ?><?php echo form_input($username); ?>
