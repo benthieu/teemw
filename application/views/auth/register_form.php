@@ -83,6 +83,9 @@ $confirm_password = array(
 );
 ?>
 
+<div class="page-header">
+	<h1>Enregistrement utilisateur</h1>
+</div>
 <div class="input-group">
 	<?php if ($use_username) { ?>
 		<?php echo form_label('Username', $username['id']); ?><?php echo form_input($username); ?>

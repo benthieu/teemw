@@ -130,6 +130,8 @@ class Auth extends CI_Controller
 			}
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('tel', 'Telephone', 'trim|required');
+			$this->form_validation->set_rules('first_name', 'Prenom', 'trim|required');
+			$this->form_validation->set_rules('last_name', 'Nom', 'trim|required');
 			$this->form_validation->set_rules('street', 'Rue, Nr', 'trim|required');
 			$this->form_validation->set_rules('address', 'Adresse', 'trim|required');
 			$this->form_validation->set_rules('zip_code', 'NPA', 'trim|required|numeric');
@@ -260,6 +262,8 @@ class Auth extends CI_Controller
 			}
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('tel', 'Telephone', 'trim|required');
+			$this->form_validation->set_rules('first_name', 'Prenom', 'trim|required');
+			$this->form_validation->set_rules('last_name', 'Nom', 'trim|required');
 			$this->form_validation->set_rules('street', 'Rue, Nr', 'trim|required');
 			$this->form_validation->set_rules('address', 'Adresse', 'trim|required');
 			$this->form_validation->set_rules('zip_code', 'NPA', 'trim|required|numeric');

@@ -12,6 +12,6 @@ class MY_Controller extends CI_Controller
 	}
 
 	function get_logged_in_user() {
-		
+		return $this->tank_auth->get_user_id();
 	}
 }

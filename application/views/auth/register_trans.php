@@ -86,10 +86,9 @@ $confirm_password = array(
 <div class="page-header">
 	<h1>Enregistrement transporteur</h1>
 </div>
-<<<<<<< HEAD
 
 
-<div class="container tabs-wrap">
+<!--<div class="container tabs-wrap">
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active">
       <a href="#transporteur" aria-controls="transport" role="tab" data-toggle="tab" aria-expanded="true">Devenez transporteur</a>
@@ -143,13 +142,8 @@ $confirm_password = array(
     <a class="btn btn-primary back">Go Back</a>
     <a class="btn btn-primary continue">Place Order</a>
   </div>
-</div></div>
+</div></div>-->
 
-
-        <div id="push"></div>
-
-?>
-=======
 <div class="input-group">
 	<?php if ($use_username) { ?>
 		<?php echo form_label('Username', $username['id']); ?><?php echo form_input($username); ?>
@@ -191,4 +185,3 @@ $confirm_password = array(
 <br>
 <?php echo form_submit('register', 'Register', 'class="btn btn-primary"'); ?>
 <?php echo form_close(); ?>
->>>>>>> origin/master
