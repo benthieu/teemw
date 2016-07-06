@@ -94,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </ul>
           <form class="navbar-form" role="search">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Rechercher une annonce" name="q">
+                <input type="text" class="form-control" placeholder="<?php echo lang('search_ads') ?>" name="q">
                 <div class="input-group-btn">
                     <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
