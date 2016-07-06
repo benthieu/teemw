@@ -54,6 +54,7 @@
 <button type="button" class="btn btn-primary">Proposer un devis</button>
 <button type="button" class="btn btn-info">Poser une question</button>
 <button type="button" class="btn btn-info">Sauvegarder</button>
+
   </section>
         </div>
 
