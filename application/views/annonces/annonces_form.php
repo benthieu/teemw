@@ -21,12 +21,11 @@
                  </tr>
                </thead>
                <tbody>
-
                                <?php for ($i = 0; $i < count($annoncelist); ++$i) { ?>
                                   <tr>
                                    <td><?php echo $annoncelist[$i]->offer; ?></td>
-                                  <td><?php echo $annoncelist[$i]->place; ?></td>
-                                    <td><?php echo $annoncelist[$i]->destination; ?></td>
+                                  <td><?php echo $annoncelist[$i]->start_place; ?></td>
+                                    <td><?php echo $annoncelist[$i]->destination_place; ?></td>
                                       <td><?php echo $annoncelist[$i]->user_id; ?></td>
                                       <td>
                                       <a href="<?php echo base_url() ?>/Annonce/index/<?php echo $annoncelist[$i]->id; ?>">Afficher</a>
@@ -34,9 +33,7 @@
                                 </tr>
                                                      <?php } ?>
                                                 </tbody>
-
              </table>
-
         </section>
 
 

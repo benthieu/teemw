@@ -23,7 +23,7 @@ class Annonce extends MY_Controller {
 			$this->load->model('Annonce_model');
 
 			$annonceresult = $this->Annonce_model->get_annonce($annonce_id);
-			$data['annoncelist'] = $annonceresult;
+			$data['annonce'] = $annonceresult;
 
       $this->load->view('annonces/annonce_form',$data);
 	}
