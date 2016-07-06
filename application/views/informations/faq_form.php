@@ -15,14 +15,14 @@
                 <div class="alert alert-warning alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <p><em>ATTENTION: cette page de FAQ n'est pas propre à TEEMW, c'est un exemple de FAQ proposé par http://www.prepbootstrap.com/</p>
-                    <p>Nous l'tulisons en guise d'exemple</em><p>
+                    <p>Nous l'utilisons en guise d'exemple</em><p>
                       <p><em>source:http://www.prepbootstrap.com/bootstrap-template/faq-example</em></p>
                 </div>
 
                 <br />
 
                 <div class="panel-group" id="accordion">
-                    <div class="faqHeader">General questions</div>
+                    <div class="faqHeader">Questions générales</div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="faqHeader">Sellers</div>
+                    <div class="faqHeader">Transporteurs</div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -149,7 +149,7 @@
                         </div>
                     </div>
 
-                    <div class="faqHeader">Buyers</div>
+                    <div class="faqHeader">Annonceurs</div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -211,7 +211,6 @@
                     color: #454444;
                 }
             </style>
-    <p>coucou</p>
   </section>
         </div>
 
