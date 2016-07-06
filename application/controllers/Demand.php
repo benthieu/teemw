@@ -19,8 +19,11 @@ class Demand extends MY_Controller {
 	public function index()
 	{
 
-		$annonceresult = $this->demand_model->get_offer_list();
-		$data['annoncelist'] = $annonceresult;
+		$offer_result = $this->demand_model->get_offer_list();
+		$data['offer_list'] = $offer_result;
+		foreach ($data['offer_list'] as &$offer) {
+			$offer->user = $this->users->get_user_by_id($offer->user_id);
+		}
 
 		$this->load->view('demand/demand_list',$data);
 	}
@@ -28,8 +31,8 @@ class Demand extends MY_Controller {
 	public function get_offer() {
 		$offer_id = $this->uri->segment(3);
 
-		$annonceresult = $this->demand_model->get_offer($offer_id);
-		$data['annonce'] = $annonceresult;
+		$offer = $this->demand_model->get_offer($offer_id);
+		$data['offer'] = $offer;
 
 		$this->load->view('demand/demand_detail',$data);
 	}
