@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo 'active';
               }?>">
 
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;User <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><?php echo lang('user') ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li <?php if ($class == 'auth' && $method == 'change_userdata') {
                     echo 'class="active"';

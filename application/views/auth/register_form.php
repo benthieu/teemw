@@ -84,30 +84,30 @@ $confirm_password = array(
 ?>
 
 <div class="page-header">
-	<h1>Enregistrement utilisateur</h1>
+	<h1><?php echo lang('register_user') ?></h1>
 </div>
 <div class="input-group">
 	<?php if ($use_username) { ?>
-		<?php echo form_label('Username', $username['id']); ?><?php echo form_input($username); ?>
+		<?php echo form_label(lang('username'), $username['id']); ?><?php echo form_input($username); ?>
 		<span style="color: red;"><?php echo form_error($username['name']); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?></span>
 		<br>
 	<?php } ?>
-		<?php echo form_label('Email Address', $email['id']); ?><?php echo form_input($email); ?>
+		<?php echo form_label(lang('mail_adress'), $email['id']); ?><?php echo form_input($email); ?>
 		<span style="color: red;"><?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?></span>
 	<br>
-		<?php echo form_label('Prénom', $first_name['id']); ?><?php echo form_input($first_name); ?>
+		<?php echo form_label(lang('firstname'), $first_name['id']); ?><?php echo form_input($first_name); ?>
 		<span style="color: red;"><?php echo form_error($first_name['name']); ?><?php echo isset($errors[$first_name['name']])?$errors[$first_name['name']]:''; ?></span>
 	<br>
-		<?php echo form_label('Nom', $last_name['id']); ?><?php echo form_input($last_name); ?>
+		<?php echo form_label(lang('lastname'), $last_name['id']); ?><?php echo form_input($last_name); ?>
 		<span style="color: red;"><?php echo form_error($last_name['name']); ?><?php echo isset($errors[$last_name['name']])?$errors[$last_name['name']]:''; ?></span>
 	<br>
-		<?php echo form_label('Telephone', $tel['id']); ?><?php echo form_input($tel); ?>
+		<?php echo form_label(lang('phone'), $tel['id']); ?><?php echo form_input($tel); ?>
 		<span style="color: red;"><?php echo form_error($tel['name']); ?><?php echo isset($errors[$tel['name']])?$errors[$tel['name']]:''; ?></span>
 	<br>
-		<?php echo form_label('Rue, Nr', $street['id']); ?><?php echo form_input($street); ?>
+		<?php echo form_label(lang('street_no'), $street['id']); ?><?php echo form_input($street); ?>
 		<span style="color: red;"><?php echo form_error($street['name']); ?><?php echo isset($errors[$street['name']])?$errors[$street['name']]:''; ?></span>
 	<br>
-		<?php echo form_label('NPA / Lieu ', $zip_code['id']); ?>
+		<?php echo form_label(lang('zip_city'), $zip_code['id']); ?>
 		<div class="row">
 			<div class="col-md-4">
 				<?php echo form_input($zip_code); ?>
@@ -118,12 +118,12 @@ $confirm_password = array(
 		</div>
 		<span style="color: red;"><?php echo form_error($address['name']); ?><?php echo isset($errors[$address['name']])?$errors[$address['name']]:''; ?></span>
 		<span style="color: red;"><?php echo form_error($zip_code['name']); ?><?php echo isset($errors[$zip_code['name']])?$errors[$zip_code['name']]:''; ?></span>
-		<?php echo form_label('Password', $password['id']); ?><?php echo form_password($password); ?>
+		<?php echo form_label(lang('password'), $password['id']); ?><?php echo form_password($password); ?>
 		<span style="color: red;"><?php echo form_error($password['name']); ?></span>
 	<br>
-		<?php echo form_label('Confirm Password', $confirm_password['id']); ?><?php echo form_password($confirm_password); ?>
+		<?php echo form_label(lang('confirm_password'), $confirm_password['id']); ?><?php echo form_password($confirm_password); ?>
 		<span style="color: red;"><?php echo form_error($confirm_password['name']); ?></span>
 </div>
 <br>
-<?php echo form_submit('register', 'Register', 'class="btn btn-primary"'); ?>
+<?php echo form_submit('register', lang('register'), 'class="btn btn-primary"'); ?>
 <?php echo form_close(); ?>
