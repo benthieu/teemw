@@ -40,7 +40,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
               <li <?php if ($class == 'landing_page') {
                 echo 'class="active"';
+
               }?>><a href="/teemw/index.php"><?php echo lang('home') ?></a></li>
+
+              <li <?php if ($class == 'Cgv') {
+                echo 'class="active"';
+              }?>><a href="/teemw/index.php/Cgv/">CGU</a></li>
+
+              <li <?php if ($class == 'Faq') {
+                echo 'class="active"';
+              }?>><a href="/teemw/index.php/Faq/">FAQ</a></li>
+
+              <li <?php if ($class == 'Contact') {
+                echo 'class="active"';
+              }?>><a href="/teemw/index.php/Contact/">Nous contacter</a></li>
+
             <?php
             if ($is_logged) {
             ?>
@@ -65,9 +79,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a href="/teemw/index.php/auth/logout"><?php echo lang('logout') ?></a></li>
                 </ul>
               </li>
-
-
-
             <?php
             }
             else {
@@ -92,6 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
             ?>
           </ul>
+
           <form class="navbar-form" role="search">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="<?php echo lang('search_ads') ?>" name="q">

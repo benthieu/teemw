@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="bootstrap-social.css" type="text/css">
 
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
