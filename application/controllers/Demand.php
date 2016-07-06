@@ -34,6 +34,10 @@ class Demand extends MY_Controller {
 		$offer = $this->demand_model->get_offer($offer_id);
 		$data['offer'] = $offer;
 
+		foreach ($data['offer'] as &$offer) {
+			$offer->user = $this->users->get_user_by_id($offer->user_id);
+		}
+
 		$this->load->view('demand/demand_detail',$data);
 	}
 
