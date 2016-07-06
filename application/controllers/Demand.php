@@ -18,7 +18,24 @@ class Demand extends MY_Controller {
 	 */
 	public function index()
 	{
-    if ($this->tank_auth->is_logged_in()) {
+
+		$annonceresult = $this->demand_model->get_offer_list();
+		$data['annoncelist'] = $annonceresult;
+
+		$this->load->view('demand/demand_list',$data);
+	}
+
+	public function get_offer() {
+		$offer_id = $this->uri->segment(3);
+
+		$annonceresult = $this->demand_model->get_offer($offer_id);
+		$data['annonce'] = $annonceresult;
+
+		$this->load->view('demand/demand_detail',$data);
+	}
+
+	public function create_offer() {
+		if ($this->tank_auth->is_logged_in()) {
 			$data = array();
 			$this->form_validation->set_rules('offer', 'Transport', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');

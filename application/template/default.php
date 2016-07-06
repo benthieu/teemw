@@ -37,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <ul class="nav navbar-nav">
             <?php
             $class = $this->router->fetch_class();
+            $method = $this->router->fetch_method();
             ?>
               <li <?php if ($class == 'landing_page') {
                 echo 'class="active"';
@@ -58,15 +59,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php
             if ($is_logged) {
             ?>
-              <li <?php if ($class == 'demand') {
+              <li <?php if ($class == 'demand' && $method == 'create_offer') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/demand/"><?php echo lang('ask_transport') ?></a></li>
+              }?>><a href="/teemw/index.php/demand/create_offer"><?php echo lang('ask_transport') ?></a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
                 echo 'active';
               }?>">
-              <li <?php if ($class == 'annonces') {
+              <li <?php if ($class == 'demand' && $method == 'index') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/annonces/"><?php echo lang('ads') ?></a></li>
+              }?>><a href="/teemw/index.php/demand/index"><?php echo lang('ads') ?></a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
                 echo 'active';
               }?>">
