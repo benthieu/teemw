@@ -1,5 +1,5 @@
 <?php
-class Annonces extends MY_Controller {
+class Annonce extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -16,18 +16,15 @@ class Annonces extends MY_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-
-
 	public function index()
 	{
+			$annonce_id = $this->uri->segment(3);
 
 			$this->load->model('Annonce_model');
 
-			$annonceresult = $this->Annonce_model->get_annonce_list();
+			$annonceresult = $this->Annonce_model->get_annonce($annonce_id);
 			$data['annoncelist'] = $annonceresult;
 
-			$this->load->view('annonces/annonces_form',$data);
-
+      $this->load->view('annonces/annonce_form',$data);
 	}
-
 }

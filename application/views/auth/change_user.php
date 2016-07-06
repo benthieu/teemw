@@ -68,7 +68,7 @@ $zip_code = array(
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
 <div class="page-header">
-	<h1>Change userdata</h1>
+	<h1>Modifier mes données</h1>
 </div>
 <div class="input-group">
 	<?php if ($use_username) { ?>

@@ -1,8 +1,12 @@
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><div class="page-header"><h1><?php echo lang('landing_page') ?></h1>
+
 </div>
 <div class="container">
+
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
