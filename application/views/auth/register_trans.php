@@ -84,7 +84,7 @@ $confirm_password = array(
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
 <div class="page-header">
-	<h1>Enregistrement transporteur</h1>
+	<h1><?php echo lang('register_transporter') ?></h1>
 </div>
 
 

@@ -40,19 +40,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
               <li <?php if ($class == 'landing_page') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php">Home</a></li>
+              }?>><a href="/teemw/index.php"><?php echo lang('home') ?></a></li>
             <?php
             if ($is_logged) {
             ?>
               <li <?php if ($class == 'demand') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/demand/">Demander un transport</a></li>
+              }?>><a href="/teemw/index.php/demand/"><?php echo lang('ask_transport') ?></a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
                 echo 'active';
               }?>">
               <li <?php if ($class == 'annonces') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/annonces/">Les annonces</a></li>
+              }?>><a href="/teemw/index.php/annonces/"><?php echo lang('ads') ?></a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
                 echo 'active';
               }?>">
@@ -61,8 +61,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="dropdown-menu">
                   <li <?php if ($class == 'auth' && $method == 'change_userdata') {
                     echo 'class="active"';
-                  }?>><a href="/teemw/index.php/auth/change_userdata">Modify</a></li>
-                    <li><a href="/teemw/index.php/auth/logout">Logout</a></li>
+                  }?>><a href="/teemw/index.php/auth/change_userdata"><?php echo lang('modify') ?></a></li>
+                    <li><a href="/teemw/index.php/auth/logout"><?php echo lang('logout') ?></a></li>
                 </ul>
               </li>
 
@@ -74,18 +74,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
               <li <?php if ($class == 'auth' && $method == 'login') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/auth/">Login</a></li>
+              }?>><a href="/teemw/index.php/auth/"><?php echo lang('login') ?></a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'register' || $method == 'register_transp')) {
                 echo 'active';
               }?>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo lang('register') ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li <?php if ($class == 'auth' && $method == 'register') {
                     echo 'class="active"';
-                  }?>><a href="/teemw/index.php/auth/register">User</a></li>
+                  }?>><a href="/teemw/index.php/auth/register"><?php echo lang('user') ?></a></li>
                   <li <?php if ($class == 'auth' && $method == 'register_transp') {
                     echo 'class="active"';
-                  }?>><a href="/teemw/index.php/auth/register_transp">Transport</a></li>
+                  }?>><a href="/teemw/index.php/auth/register_transp"><?php echo lang('transporter') ?></a></li>
                 </ul>
               </li>
             <?php
