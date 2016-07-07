@@ -2,9 +2,15 @@
 
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><div class="page-header"><h1><?php echo lang('landing_page') ?></h1>
+?><div class="page-header"><h2><?php echo lang('landing_page') ?></h2>
 
 </div>
+<h3><p class="text-info">TRANSPORT</p>
+<p class="text-success">ECOLOGIE</p>
+<p class="text-danger">ECONOMIE</p>
+<p class="text-warning">MARCHANDISE</p>
+<p class="text-primary">WARE</p>
+</h2>
 <div class="container">
 
   <br>
