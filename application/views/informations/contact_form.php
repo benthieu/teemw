@@ -17,16 +17,17 @@ SOURCE: http://www.prepbootstrap.com/bootstrap-template/contact-form-map -->
                     <div class="col-md-6">
                         <div class="well well-sm">
                             <form class="form-horizontal" method="post">
+                              <input type="hidden" name="contact_form" value="true" />
                                 <fieldset>
                                     <legend class="text-center header">Nous contacter</legend>
                                     <div class="form-group">
                                         <div class="col-md-10 col-md-offset-1">
-                                            <input id="fname" name="name" type="text" placeholder="Prénom" class="form-control">
+                                            <input id="fname" name="prenom" type="text" placeholder="Prénom" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-10 col-md-offset-1">
-                                            <input id="lname" name="name" type="text" placeholder="Nom" class="form-control">
+                                            <input id="lname" name="nom" type="text" placeholder="Nom" class="form-control">
                                         </div>
                                     </div>
 
@@ -38,7 +39,7 @@ SOURCE: http://www.prepbootstrap.com/bootstrap-template/contact-form-map -->
 
                                     <div class="form-group">
                                         <div class="col-md-10 col-md-offset-1">
-                                            <input id="phone" name="phone" type="text" placeholder="Numéro de téléphone" class="form-control">
+                                            <input id="phone" name="tel" type="text" placeholder="Numéro de téléphone" class="form-control">
                                         </div>
                                     </div>
 
@@ -62,7 +63,6 @@ SOURCE: http://www.prepbootstrap.com/bootstrap-template/contact-form-map -->
 
                                   </div>
                                 </div>
-
                                 </fieldset>
                             </form>
                         </div>

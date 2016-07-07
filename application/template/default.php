@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
               <li <?php if ($class == 'landing_page') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php"><?php echo lang('home') ?></a></li>
+              }?>><a href="<?php echo base_url(); ?>"><?php echo lang('home') ?></a></li>
 
               <li class="dropdown <?php if ($class == 'Cgv'|| $class == 'Faq' || $class == 'Explication' || $class == 'Contact') {
           echo 'active';
@@ -53,16 +53,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <ul class="dropdown-menu">
             <li <?php if ($class == 'Cgv') {
               echo 'class="active"';
-            }?>><a href="/teemw/index.php/Cgv/">CGU - Conditions générales</a></li>
+            }?>><a href="<?php echo base_url(); ?>Cgv/">CGU - Conditions générales</a></li>
               <li <?php if ($class == 'Faq') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/Faq/">FAQ - Foire aux questions</a></li>
+              }?>><a href="<?php echo base_url(); ?>Faq/">FAQ - Foire aux questions</a></li>
               <li <?php if ($class == 'Explication') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/Explication/">Explication du site</a></li>
+              }?>><a href="<?php echo base_url(); ?>Explication/">Explication du site</a></li>
               <li <?php if ($class == 'Contact') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/Contact/">Nous contacter</a></li>
+              }?>><a href="<?php echo base_url(); ?>Contact/">Nous contacter</a></li>
           </ul>
         </li>
 
@@ -72,13 +72,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
               <li <?php if ($class == 'demand' && $method == 'create_offer') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/demand/create_offer"><?php echo lang('ask_transport') ?></a></li>
+              }?>><a href="<?php echo base_url(); ?>demand/create_offer"><?php echo lang('ask_transport') ?></a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
                 echo 'active';
               }?>">
               <li <?php if ($class == 'demand' && ($method == 'index' || $method == 'get_offer' || $method == 'edit_offer')) {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/demand/index"><?php echo lang('ads') ?></a></li>
+              }?>><a href="<?php echo base_url(); ?>demand/index"><?php echo lang('ads') ?></a></li>
               <li class="dropdown <?php if (($class == 'auth' && ($method == 'change_userdata')) || ($class == 'demand' && $method == 'get_my_offers')) {
                 echo 'active';
               }?>">
@@ -87,11 +87,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="dropdown-menu">
                   <li <?php if (($class == 'demand' && $method == 'get_my_offers')) {
                     echo 'class="active"';
-                  }?>><a href="/teemw/index.php/demand/get_my_offers">Mes annonces</a></li>
+                  }?>><a href="<?php echo base_url(); ?>demand/get_my_offers">Mes annonces</a></li>
                   <li <?php if (($class == 'auth' && $method == 'change_userdata')) {
                     echo 'class="active"';
-                  }?>><a href="/teemw/index.php/auth/change_userdata"><?php echo lang('modify') ?></a></li>
-                    <li><a href="/teemw/index.php/auth/logout"><?php echo lang('logout') ?></a></li>
+                  }?>><a href="<?php echo base_url(); ?>auth/change_userdata"><?php echo lang('modify') ?></a></li>
+                    <li><a href="<?php echo base_url(); ?>auth/logout"><?php echo lang('logout') ?></a></li>
                 </ul>
               </li>
             <?php
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
               <li <?php if ($class == 'auth' && $method == 'login') {
                 echo 'class="active"';
-              }?>><a href="/teemw/index.php/auth/"><?php echo lang('login') ?></a></li>
+              }?>><a href="<?php echo base_url(); ?>auth/"><?php echo lang('login') ?></a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'register' || $method == 'register_transp')) {
                 echo 'active';
               }?>">
@@ -108,10 +108,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="dropdown-menu">
                   <li <?php if ($class == 'auth' && $method == 'register') {
                     echo 'class="active"';
-                  }?>><a href="/teemw/index.php/auth/register"><?php echo lang('user') ?></a></li>
+                  }?>><a href="<?php echo base_url(); ?>auth/register"><?php echo lang('user') ?></a></li>
                   <li <?php if ($class == 'auth' && $method == 'register_transp') {
                     echo 'class="active"';
-                  }?>><a href="/teemw/index.php/auth/register_transp"><?php echo lang('transporter') ?></a></li>
+                  }?>><a href="<?php echo base_url(); ?>auth/register_transp"><?php echo lang('transporter') ?></a></li>
                 </ul>
               </li>
             <?php

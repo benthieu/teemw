@@ -20,9 +20,17 @@ class Contact extends MY_Controller {
 
 	public function index()
 	{
-
-			$this->load->view('informations/contact_form');
-
+		if (isset($_POST['contact_form'])) {
+			$this->load->library('email');
+			$this->email->from('noreply@teemw.ch');
+			$this->email->to('mathieu.b93@gmail.com');
+			$this->email->subject('Contact form');
+			$mail_data['entries'] = $_POST;
+			$this->email->message($this->load->view('email/contact-txt', $mail_data, TRUE));
+			$this->email->set_alt_message($this->load->view('email/contact-txt', $mail_data, TRUE));
+			$this->email->send();
+		}
+		$this->load->view('informations/contact_form');
 	}
 
 }
