@@ -1,31 +1,76 @@
-<div class="container">
-  <section class="row">
-
-    <table class="table table-hover">
-       <thead>
-         <tr>
-           <th>Titre</th>
-           <th>Départ</th>
-           <th>Arrivée</th>
-           <th>Demandeur</th>
-           <th>Action</th>
-         </tr>
-       </thead>
-       <tbody>
-                       <?php for ($i = 0; $i < count($offer_list); ++$i) { ?>
-                          <tr>
-                           <td><?php echo $offer_list[$i]->offer; ?></td>
-                          <td><?php echo $offer_list[$i]->start_place; ?></td>
-                            <td><?php echo $offer_list[$i]->destination_place; ?></td>
-                              <td><?php echo $offer_list[$i]->user->last_name." ".$offer_list[$i]->user->first_name; ?></td>
-                              <td>
-                              <a href="<?php echo base_url() ?>/demand/get_offer/<?php echo $offer_list[$i]->id; ?>">Afficher</a>
-                          </td>
-                        </tr>
-                                             <?php } ?>
-                                        </tbody>
-     </table>
-</section>
-
-
-</div>
+<div class="col-md-1"></div>
+<p><b></b></p>
+	<h2>Annonces</h2>
+  <span style="color: red;"><?php
+    echo $this->session->flashdata('MSG');
+  ?></span>
+<table class="table table-hover table-striped" style="border-bottom: 2px solid #666">
+  <tbody>
+  <?php for ($i = 0; $i < count($offer_list); ++$i) {
+    if ($offer_list[$i]->user_id != $this->tank_auth->get_user_id() && $offer_list[$i]->state != 1) {
+      continue;
+    }
+    ?>
+    <tr>
+      <td>
+          <p>
+          <?php
+            switch ($offer_list[$i]->offer_type) {
+              case 'dem':
+                  echo '<center><span style="font-size: 75px; color: #666" class="glyphicon glyphicon-home" aria-hidden="true"></span><br><strong style="color: #AAA">Déménagement</strong></center>';
+                break;
+              case 'veh':
+                  echo '<center><span style="font-size: 75px; color: #666" class="glyphicon glyphicon-send" aria-hidden="true"></span><br><strong style="color: #AAA">Véhicules</strong></center>';
+                break;
+              case 'per':
+                  echo '<center><span style="font-size: 75px; color: #666" class="glyphicon glyphicon-user" aria-hidden="true"></span><br><strong style="color: #AAA">Personnes</strong></center>';
+                break;
+              case 'obj':
+                  echo '<center><span style="font-size: 75px; color: #666" class="glyphicon glyphicon-transfer" aria-hidden="true"></span><br><strong style="color: #AAA">Objets divers</strong></center>';
+                break;
+              default:
+                break;
+            }
+           ?>
+        </p>
+      </td>
+      <td style="vertical-align: middle;">
+        <p>
+          Départ:&nbsp;&nbsp;<strong><?php echo $offer_list[$i]->start_place.", ".$offer_list[$i]->start_zip_code; ?></strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <?php echo $offer_list[$i]->start_street; ?>
+        </p>
+        <p>
+          Arrivée:&nbsp;&nbsp;<strong><?php echo $offer_list[$i]->destination_place.", ".$offer_list[$i]->destination_zip_code; ?></strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <?php echo $offer_list[$i]->destination_street; ?>
+        </p>
+      </td>
+      <td style="vertical-align: middle;">
+        <p>
+          Titre:&nbsp;<?php echo $offer_list[$i]->offer; ?><br>
+          Date:&nbsp;&nbsp;<strong><?php echo $offer_list[$i]->date; ?></strong>
+        </p>
+        <p>
+          Demandeur:&nbsp;<?php echo $offer_list[$i]->user->last_name." ".$offer_list[$i]->user->first_name; ?><br>
+          Telephone:&nbsp;<a href="tel:<?php echo $offer_list[$i]->user->tel; ?>"><strong><?php echo $offer_list[$i]->user->tel; ?></a></strong>
+        </p>
+      </td>
+      <td style="vertical-align: middle; width: 100px">
+        <p style="margin-bottom: 2px"><a style="width: 90px; display: inline-block; text-align: center" class="btn btn-primary" href="<?php echo base_url() ?>demand/get_offer/<?php echo $offer_list[$i]->id; ?>">Afficher</a></p>
+        <?php
+        if ($offer_list[$i]->user_id == $this->tank_auth->get_user_id())  {
+          echo '<p style="margin-bottom: 2px"><a style="width: 90px; display: inline-block; text-align: center" class="btn btn-info btn-xs" href="'.base_url().'demand/edit_offer/'.$offer_list[$i]->id.'">Modifier</a></p>';
+          if ($offer_list[$i]->state == 1) {
+            echo '<p style="margin-bottom: 2px"><a style="width: 90px; display: inline-block; text-align: center" class="btn btn-warning btn-xs" href="'.base_url().'demand/toggle_offer/'.$offer_list[$i]->id.'">Désactiver</a></p>';
+          }
+          else {
+            echo '<p style="margin-bottom: 2px"><a style="width: 90px; display: inline-block; text-align: center" class="btn btn-success btn-xs" href="'.base_url().'demand/toggle_offer/'.$offer_list[$i]->id.'">Activer</a></p>';
+          }
+        }
+        ?>
+      </td>
+    </tr>
+  <?php } ?>
+  </tbody>
+</table>

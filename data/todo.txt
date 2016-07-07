@@ -1,0 +1,9 @@
+- finish detail view
+  - show Messages
+    - delete message
+  - delete offer
+- my offers list
+- map overview
+- communication
+  - send mail
+  - show unread messages on overview 

@@ -1,4 +1,12 @@
 <?php
+$date = array(
+	'name'	=> 'date',
+	'id'	=> 'date',
+	'value'	=> set_value('date'),
+	'maxlength'	=> 80,
+	'size'	=> 30,
+	'class' => 'form-control bootstrap-datepicker',
+);
 $offer = array(
 	'name'	=> 'offer',
 	'id'	=> 'offer',
@@ -74,6 +82,10 @@ $(document).ready(function() {
 		$(".div_"+$(this).attr("id")).show();
 		$("#offer_type").val($(this).attr("id"));
 	})
+	if ($("#offer_type").val() != "") {
+		$(".div_demand").hide();
+		$(".div_"+$("#offer_type").val()).show();
+	}
 })
 </script>
 <div class="col-md-1"></div>
@@ -88,6 +100,7 @@ $(document).ready(function() {
 					<br>
 					<?php echo form_label('Description', $description['id']); ?><?php echo form_textarea($description); ?>
 					<br>
+					<?php echo form_label('Date', $date['id']); ?><?php echo form_input($date); ?>
 		  </div>
 		</div>
 	</div>
@@ -132,73 +145,76 @@ $(document).ready(function() {
 		<button type="button" class="btn btn-default btn-lg" id="per"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><?php echo lang('people') ?></button>
 		<button type="button" class="btn btn-default btn-lg" id="obj"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span><?php echo lang('various_objects') ?></button>
 	</div>
-	<input type="hidden" name="offer_type" id="offer_type" value="0" />
+	<input type="hidden" name="offer_type" id="offer_type" value="<?php echo set_value('offer_type'); ?>" />
 	<br /> <br />
 	<div class="div_dem div_demand">
     <div class="form-group col-md-3">
       <label for="nbreBoxes"><?php echo lang('number_boxes') ?></label>
-      <input type="number" class="form-control col-md-1" name="field_dem_boxes" id="nbreBoxes" value="">
+      <input type="number" class="form-control col-md-1" name="field_dem_boxes" id="nbreBoxes" value="<?php echo set_value('field_dem_boxes'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="nbreSmFournitures"><?php echo lang('number_small_furniture') ?></label>
-      <input type="number" class="form-control" name="field_dem_small_furniture" id="nbreSmFournitures" value="">
+      <input type="number" class="form-control" name="field_dem_small_furniture" id="nbreSmFournitures" value="<?php echo set_value('field_dem_small_furniture'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="nbreMdFournitures"><?php echo lang('number_medium_furniture') ?></label>
-      <input type="number" class="form-control" name="field_dem_middle_furniture" id="nbreMdFournitures" value="">
+      <input type="number" class="form-control" name="field_dem_middle_furniture" id="nbreMdFournitures" value="<?php echo set_value('field_dem_middle_furniture'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="nbreBgFournitures"><?php echo lang('number_big_furniture') ?></label>
-      <input type="number" class="form-control" name="field_dem_big_furniture" id="nbreBgFournitures" value="">
+      <input type="number" class="form-control" name="field_dem_big_furniture" id="nbreBgFournitures" value="<?php echo set_value('field_dem_big_furniture'); ?>">
     </div>
   </div>
 
 	<div class="div_veh div_demand">
     <div class="form-group col-md-3">
       <label for="brand"><?php echo lang('brand') ?></label>
-      <input type="text" class="form-control" name="field_veh_brand" id="brand" placeholder="Mercedes">
+      <input type="text" class="form-control" name="field_veh_brand" id="brand" placeholder="Mercedes" value="<?php echo set_value('field_veh_brand'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="model"><?php echo lang('model') ?></label>
-      <input type="text" class="form-control" name="field_veh_model" id="model" placeholder="S600">
+      <input type="text" class="form-control" name="field_veh_model" id="model" placeholder="S600" value="<?php echo set_value('field_veh_model'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="length"><?php echo lang('length') ?></label>
-      <input type="text" class="form-control" name="field_veh_length" id="length">
+      <input type="text" class="form-control" name="field_veh_length" id="length" value="<?php echo set_value('field_veh_length'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="width"><?php echo lang('width') ?></label>
-      <input type="text" class="form-control" name="field_veh_width" id="width" >
+      <input type="text" class="form-control" name="field_veh_width" id="width" value="<?php echo set_value('field_veh_width'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="height"><?php echo lang('height') ?></label>
-      <input type="text" class="form-control" name="field_veh_height" id="height" >
+      <input type="text" class="form-control" name="field_veh_height" id="height" value="<?php echo set_value('field_veh_height'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="wheight"><?php echo lang('weight') ?></label>
-      <input type="text" class="form-control" name="field_veh_wheight" id="wheight" placeholder="1300Kg">
+      <input type="text" class="form-control" name="field_veh_wheight" id="wheight" placeholder="1300Kg" value="<?php echo set_value('field_veh_wheight'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="quant"><?php echo lang('quantity') ?></label>
-      <input type="number" class="form-control" name="field_veh_number" id="quant" placeholder="1">
+      <input type="number" class="form-control" name="field_veh_number" id="quant" placeholder="1" value="<?php echo set_value('field_veh_number'); ?>">
     </div>
   </div>
 
 	<div class="div_per div_demand">
     <div class="form-group col-md-3">
       <label for="quant"><?php echo lang('quantity') ?></label>
-      <input type="number" class="form-control" name="field_per_number" id="quant" value="">
+      <input type="number" class="form-control" name="field_per_number" id="quant" value="<?php echo set_value('field_per_number'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="nbLug"><?php echo lang('baggage') ?></label>
-      <input type="number" class="form-control" name="field_per_bags" id="nbLug" value="">
+      <input type="number" class="form-control" name="field_per_bags" id="nbLug" value="<?php echo set_value('field_per_bags'); ?>">
     </div>
     <div class="form-group col-md-3">
 			<label>&nbsp;</label>
+			<?php
+			$field_per_mob_red_val = set_value('field_per_mob_red');
+			?>
 			<select name="field_per_mob_red" class="form-control">
-				<option value="-1"><?php echo lang('reduced_mobility') ?></option>
-				<option value="1"><?php echo lang('yes') ?></option>
-				<option value="0"><?php echo lang('no') ?></option>
+				<option <?php echo (($field_per_mob_red_val == -1 || empty($field_per_mob_red_val)) ? 'selected' : ''); ?> value="-1">Mobilité réduite</option>
+				<option <?php echo (($field_per_mob_red_val === 1) ? 'selected' : ''); ?> value="1">Oui</option>
+				<option <?php echo (($field_per_mob_red_val === 0) ? 'selected' : ''); ?> value="0">Non</option>
 			</select>
     </div>
 	</div>
@@ -206,39 +222,42 @@ $(document).ready(function() {
 	<div class="div_obj div_demand">
 		<div class="form-group col-md-3">
       <label for="volume"><?php echo lang('volume') ?></label>
-      <input type="text" class="form-control" id="volume" placeholder="6m³" name="field_obj_vol">
+      <input type="text" class="form-control" id="volume" placeholder="6m³" name="field_obj_vol" value="<?php echo set_value('field_obj_vol'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="length"><?php echo lang('length') ?></label>
-      <input type="text" class="form-control" id="length" placeholder="8m" name="field_obj_length">
+      <input type="text" class="form-control" id="length" placeholder="8m" name="field_obj_length" value="<?php echo set_value('field_obj_length'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="width"><?php echo lang('width') ?></label>
-      <input type="text" class="form-control" id="width" placeholder="3,5m" name="field_obj_size">
+       <input type="text" class="form-control" id="width" placeholder="3,5m" name="field_obj_size" value="<?php echo set_value('field_obj_size'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="height"><?php echo lang('height') ?></label>
-      <input type="text" class="form-control" id="height" placeholder="2,80m" name="field_obj_height">
+      <input type="text" class="form-control" id="height" placeholder="2,80m" name="field_obj_height" value="<?php echo set_value('field_obj_height'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="wheight"><?php echo lang('weight') ?></label>
-      <input type="text" class="form-control" id="wheight" placeholder="1300Kg" name="field_obj_weight">
+      <input type="text" class="form-control" id="wheight" placeholder="1300Kg" name="field_obj_weight" value="<?php echo set_value('field_obj_weight'); ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="quant"><?php echo lang('quantity') ?></label>
-      <input type="number" class="form-control" id="quant" placeholder="1" name="field_obj_number">
+      <input type="number" class="form-control" id="quant" placeholder="1" name="field_obj_number" value="<?php echo set_value('field_obj_number'); ?>">
     </div>
 		<div class="form-group col-md-3">
 			<label for="field_per_mob_red"><?php echo lang('fragility') ?></label>
-			<select name="field_per_mob_red" id="field_per_mob_red" class="form-control">
-				<option value="-1"><?php echo lang('particularly_fragile') ?></option>
-				<option value="1"><?php echo lang('yes') ?></option>
-				<option value="0"><?php echo lang('no') ?></option>
+			<?php
+			$field_obj_frag_val = set_value('field_obj_frag');
+			?>
+			<select name="field_obj_frag" id="field_obj_frag" class="form-control">
+				<option <?php echo (($field_obj_frag_val == -1 || empty($field_obj_frag_val)) ? 'selected' : ''); ?> value="-1">Particulièrement fragile</option>
+				<option <?php echo (($field_obj_frag_val === 1) ? 'selected' : ''); ?> value="1">Oui</option>
+				<option <?php echo (($field_obj_frag_val === 0) ? 'selected' : ''); ?> value="0">Non</option>
 			</select>
     </div>
   </div>
 	<div style="clear: both"></div>
-	<button type="submit" class="btn btn-default"><?php echo lang('send_request') ?></button>
+	<button type="submit" class="btn<?php echo ($modify ? ' btn-info">Modifier la demande' : ' btn-primary">Envoyer la demande'); ?></button>
 	<br>
 	<br>
 </form>

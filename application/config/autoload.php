@@ -132,4 +132,4 @@ $autoload['language'] = array('tank_auth', 'default');
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('demand_model', 'tank_auth/users');
+$autoload['model'] = array('offer_model', 'tank_auth/users', 'offer_communication_model');

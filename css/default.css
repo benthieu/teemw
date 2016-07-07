@@ -8,3 +8,7 @@
 legend.scheduler-border {
     text-align: center;
 }
+
+.panel-heading [data-toggle="collapse"]:after {
+  display: none;
+}

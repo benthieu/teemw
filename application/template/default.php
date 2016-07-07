@@ -14,11 +14,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link id="bsdp-css" href="<?php echo base_url(); ?>addons/datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/default.css">
     <script type="text/javascript" src="<?php echo base_url(); ?>js/default.js"></script>
+    <script src="<?php echo base_url(); ?>addons/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="<?php echo base_url(); ?>addons/datepicker/locales/bootstrap-datepicker.fr-CH.min.js" charset="UTF-8"></script>
 	</head>
     <body role="document">
     <!-- Fixed navbar -->
@@ -65,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
                 echo 'active';
               }?>">
-              <li <?php if ($class == 'demand' && $method == 'index') {
+              <li <?php if ($class == 'demand' && ($method == 'index' || $method == 'get_offer' || $method == 'edit_offer')) {
                 echo 'class="active"';
               }?>><a href="/teemw/index.php/demand/index"><?php echo lang('ads') ?></a></li>
               <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
