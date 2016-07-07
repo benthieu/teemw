@@ -71,13 +71,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <li <?php if ($class == 'demand' && ($method == 'index' || $method == 'get_offer' || $method == 'edit_offer')) {
                 echo 'class="active"';
               }?>><a href="/teemw/index.php/demand/index"><?php echo lang('ads') ?></a></li>
-              <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
+              <li class="dropdown <?php if (($class == 'auth' && ($method == 'change_userdata')) || ($class == 'demand' && $method == 'get_my_offers')) {
                 echo 'active';
               }?>">
 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><?php echo lang('user') ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li <?php if ($class == 'auth' && $method == 'change_userdata') {
+                  <li <?php if (($class == 'demand' && $method == 'get_my_offers')) {
+                    echo 'class="active"';
+                  }?>><a href="/teemw/index.php/demand/get_my_offers">Mes annonces</a></li>
+                  <li <?php if (($class == 'auth' && $method == 'change_userdata')) {
                     echo 'class="active"';
                   }?>><a href="/teemw/index.php/auth/change_userdata"><?php echo lang('modify') ?></a></li>
                     <li><a href="/teemw/index.php/auth/logout"><?php echo lang('logout') ?></a></li>

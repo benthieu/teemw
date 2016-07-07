@@ -31,6 +31,20 @@ class Offer_model extends CI_Model
 		return $result;
 	}
 
+	function get_my_offer_list()
+	{
+		$this->db->select('*');
+		$this->db->from('offer');
+		$this->db->where('user_id',$offer_id);
+		$this->db->order_by('date', 'DESC');
+		$query=$this->db->get();
+		$result = $query->result();
+		foreach ($result as $obj) {
+			$obj->communication = $this->offer_communication_model->get_offer_communications_by_offer_id($obj->id);
+		}
+		return $result;
+	}
+
 	function get_offer_by_id($offer_id)
 	{
 		$this->db->select('*');

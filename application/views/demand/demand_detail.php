@@ -156,8 +156,8 @@
         <h3 class="panel-title">Map</h3>
       </div>
       <div class="panel-body" style="padding: 0">
-        <!-- AIzaSyAAB-bHgz5wpl16jgtFk5WxSSDRhLq0Bt0 -->
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=&sensor=false"></script>
+        <!--  -->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAAB-bHgz5wpl16jgtFk5WxSSDRhLq0Bt0&sensor=false"></script>
         <div id="map_canvas" style="width:100%; height:400px"></div>
         <script>
         var directionDisplay, map;

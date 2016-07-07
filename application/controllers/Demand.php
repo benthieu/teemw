@@ -18,8 +18,18 @@ class Demand extends MY_Controller {
 	 */
 	public function index()
 	{
-
 		$offer_result = $this->offer_model->get_offer_list();
+		$data['offer_list'] = $offer_result;
+		foreach ($data['offer_list'] as &$offer) {
+			$offer->user = $this->users->get_user_by_id($offer->user_id);
+			$offer->date = date('d.m.Y', strtotime($offer->date));
+		}
+
+		$this->load->view('demand/demand_list',$data);
+	}
+
+	public function get_my_offers() {
+		$offer_result = $this->offer_model->get_my_offer_list();
 		$data['offer_list'] = $offer_result;
 		foreach ($data['offer_list'] as &$offer) {
 			$offer->user = $this->users->get_user_by_id($offer->user_id);

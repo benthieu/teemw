@@ -82,7 +82,7 @@ $confirm_password = array(
 	'class' => 'form-control',
 );
 ?>
-
+<?php echo form_open($this->uri->uri_string()); ?>
 <div class="page-header">
 	<h1><?php echo lang('register_user') ?></h1>
 </div>
