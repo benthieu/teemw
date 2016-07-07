@@ -12,6 +12,47 @@
     }
     ?>
     <tr>
+			<?php
+			if (!empty($user_id)) {
+				?>
+					<td style="width: 40px; vertical-align: middle;text-align: center; <?php echo ($user_id == $offer_list[$i]->user_id ? 'background: #3e8f3e' : 'background: #AAA'); ?>">
+						<?php
+						$messages_unread = 0;
+						if ($offer_list[$i]->user_id == $user_id)  {
+							foreach($offer_list[$i]->communication as $offer_user_id => $data) {
+									foreach($data['messages'] as $message) {
+										if ($message->from_user_id != $user_id) {
+											if ($message->is_notified != '1') {
+												$messages_unread++;
+											}
+										}
+									}
+							}
+						}
+						else {
+							if (isset($offer_list[$i]->communication[$offer_list[$i]->user_id])) {
+								$data = $offer_list[$i]->communication[$offer_list[$i]->user_id];
+								$messages = $offer_list[$i]->communication[$offer_list[$i]->user_id]['messages'];
+								foreach($messages as $message) {
+									if ($message->to_user_id == $user_id) {
+										if ($message->is_notified != '1') {
+											$messages_unread++;
+										}
+									}
+								}
+							}
+						}
+						if ($messages_unread == 0) {
+							echo "&nbsp;";
+						}
+						else {
+							echo "<span class='bubble'>".$messages_unread."</span>";
+						}
+						?>
+					</td>
+				<?php
+			}
+			?>
       <td>
           <p>
           <?php
@@ -52,7 +93,9 @@
           Date:&nbsp;&nbsp;<strong><?php echo $offer_list[$i]->date; ?></strong>
         </p>
         <p>
-          Demandeur:&nbsp;<?php echo $offer_list[$i]->user->last_name." ".$offer_list[$i]->user->first_name; ?><br>
+          Demandeur:&nbsp;
+					<?php echo $offer_list[$i]->user->last_name." ".$offer_list[$i]->user->first_name; ?>
+					<br>
           Telephone:&nbsp;<a href="tel:<?php echo $offer_list[$i]->user->tel; ?>"><strong><?php echo $offer_list[$i]->user->tel; ?></a></strong>
         </p>
       </td>

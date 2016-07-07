@@ -31,6 +31,7 @@ class Demand extends MY_Controller {
 	public function get_my_offers() {
 		$offer_result = $this->offer_model->get_my_offer_list();
 		$data['offer_list'] = $offer_result;
+		$data['user_id'] = $this->get_logged_in_user();
 		foreach ($data['offer_list'] as &$offer) {
 			$offer->user = $this->users->get_user_by_id($offer->user_id);
 			$offer->date = date('d.m.Y', strtotime($offer->date));

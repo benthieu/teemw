@@ -12,3 +12,13 @@ legend.scheduler-border {
 .panel-heading [data-toggle="collapse"]:after {
   display: none;
 }
+
+span.bubble {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: rgba(255,255,255,0.3);
+    line-height: 25px;
+    border-radius: 50%;
+    color: white;
+}

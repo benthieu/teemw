@@ -33,9 +33,11 @@ class Offer_model extends CI_Model
 
 	function get_my_offer_list()
 	{
-		$this->db->select('*');
+		$this->db->distinct();
+		$this->db->select('offer.*');
 		$this->db->from('offer');
-		$this->db->where('user_id',$offer_id);
+		$this->db->join('offer_communication', 'offer_communication.offer_id = offer.id', 'left outer');
+		$this->db->where("offer.user_id=".$this->tank_auth->get_user_id()." OR offer_communication.from_user_id=".$this->tank_auth->get_user_id()." OR offer_communication.to_user_id=".$this->tank_auth->get_user_id());
 		$this->db->order_by('date', 'DESC');
 		$query=$this->db->get();
 		$result = $query->result();

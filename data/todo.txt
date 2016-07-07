@@ -4,6 +4,5 @@
 - map overview (0)
 - communication
   - send mail (2)
-  - show unread messages on overview (1)
 - translate to english
 - search offers (filter)
