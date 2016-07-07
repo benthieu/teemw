@@ -50,9 +50,19 @@ SOURCE: http://www.prepbootstrap.com/bootstrap-template/contact-form-map -->
 
                                     <div class="form-group">
                                         <div class="col-md-12 text-center">
-                                            <button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
-                                        </div>
-                                    </div>
+                                          <div class="product-options">
+                                            <a  id="send" href="javascript:;"  class="btn btn-primary" >Envoyer</a>
+                                          </div>
+                                            <br />
+                                          <div class="alert alert-success" id="success-alert">
+                                            <button type="button" class="close" data-dismiss="alert">x</button>
+                                            <p><strong>Message envoyé </strong></p>
+                                            <p>Un collaborateur de TEEMW vous répondera dans les plus brefs délais.</p>
+                                          </div>
+
+                                  </div>
+                                </div>
+
                                 </fieldset>
                             </form>
                         </div>
@@ -103,11 +113,24 @@ SOURCE: http://www.prepbootstrap.com/bootstrap-template/contact-form-map -->
                     font-size: 27px;
                     padding: 10px;
                 }
+
             </style>
   </section>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready (function(){
+                $("#success-alert").hide();
+                $("#send").click(function showAlert() {
+                    $("#success-alert").alert();
+                    $("#success-alert").fadeTo(6000, 500).slideUp(500, function(){
+                   $("#success-alert").alert('close');
+                    });
+                });
+     });
+
+        </script>
+
+
     </body>
     </html>

@@ -47,18 +47,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               }?>><a href="/teemw/index.php"><?php echo lang('home') ?></a></li>
 
-              <li <?php if ($class == 'Cgv') {
-                echo 'class="active"';
-              }?>><a href="/teemw/index.php/Cgv/">CGU</a></li>
+              <li class="dropdown <?php if ($class == 'Cgv'|| $class == 'Faq' || $class = 'Contact') {
+                echo 'active';
+              }?>">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos pratiques<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li <?php if ($class == 'Cgv') {
+                    echo 'class="active"';
+                    }?>><a href="/teemw/index.php/Cgv/">CGU</a></li>
+                    <li <?php if ($class == 'Faq') {
+                      echo 'class="active"';
+                    }?>><a href="/teemw/index.php/Faq/">FAQ</a></li>
+                    <li <?php if ($class == 'Contact') {
+                      echo 'class="active"';
+                    }?>><a href="/teemw/index.php/Contact/">Nous contacter</a></li>
+                </ul>
+              </li>
 
-              <li <?php if ($class == 'Faq') {
-                echo 'class="active"';
-              }?>><a href="/teemw/index.php/Faq/">FAQ</a></li>
-
-              <li <?php if ($class == 'Contact') {
-                echo 'class="active"';
-              }?>><a href="/teemw/index.php/Contact/">Nous contacter</a></li>
-
+            
             <?php
             if ($is_logged) {
             ?>
