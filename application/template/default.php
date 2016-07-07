@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo 'active';
               }?>">
 
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<?php echo lang('user') ?><span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<?php echo lang('advertiser') ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li <?php if (($class == 'demand' && $method == 'get_my_offers')) {
                     echo 'class="active"';
@@ -108,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="dropdown-menu">
                   <li <?php if ($class == 'auth' && $method == 'register') {
                     echo 'class="active"';
-                  }?>><a href="<?php echo base_url(); ?>auth/register"><?php echo lang('user') ?></a></li>
+                  }?>><a href="<?php echo base_url(); ?>auth/register"><?php echo lang('advertiser') ?></a></li>
                   <li <?php if ($class == 'auth' && $method == 'register_transp') {
                     echo 'class="active"';
                   }?>><a href="<?php echo base_url(); ?>auth/register_transp"><?php echo lang('transporter') ?></a></li>

@@ -11,6 +11,7 @@ $lang['home'] = 'Accueil';
 $lang['ask_transport'] = 'Demander un transport';
 $lang['login'] = 'Se connecter';
 $lang['user'] = 'Utilisateur';
+$lang['advertiser'] = 'Annonceur';
 $lang['transporter'] = 'Transporteur';
 $lang['register'] = 'S\'enregistrer ';
 $lang['just_register'] = 'Enregistrer ';
