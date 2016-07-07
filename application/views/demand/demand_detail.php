@@ -230,6 +230,7 @@
       else {
         echo '<p style="margin-bottom: 2px"><a style="width: 100%; display: inline-block; text-align: center" class="btn btn-success" href="'.base_url().'demand/toggle_offer/'.$offer->id.'">Activer</a></p>';
       }
+			echo '<p style="margin-bottom: 2px"><a style="width: 100%; display: inline-block; text-align: center" class="btn btn-danger" href="'.base_url().'demand/remove_offer/'.$offer->id.'">Supprimer</a></p>';
     }
     ?>
     <br>

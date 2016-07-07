@@ -18,7 +18,12 @@ class Demand extends MY_Controller {
 	 */
 	public function index()
 	{
-		$offer_result = $this->offer_model->get_offer_list();
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
+		$filter_by_text = $this->input->post('filter_by_text');
+		$filter_by_type = $this->input->post('filter_by_type');
+		$offer_result = $this->offer_model->get_offer_list($filter_by_text, $filter_by_type);
 		$data['offer_list'] = $offer_result;
 		foreach ($data['offer_list'] as &$offer) {
 			$offer->user = $this->users->get_user_by_id($offer->user_id);
@@ -29,6 +34,9 @@ class Demand extends MY_Controller {
 	}
 
 	public function get_my_offers() {
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
 		$offer_result = $this->offer_model->get_my_offer_list();
 		$data['offer_list'] = $offer_result;
 		$data['user_id'] = $this->get_logged_in_user();
@@ -41,6 +49,9 @@ class Demand extends MY_Controller {
 	}
 
 	public function get_offer() {
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
 		$offer_id = $this->uri->segment(3);
 		if (empty($offer_id)) {
 			redirect('demand/');
@@ -73,7 +84,23 @@ class Demand extends MY_Controller {
 		if (empty($offer_id)) {
 			redirect('demand/');
 		}
+
 		return $this->offer_form($offer_id);
+	}
+
+	public function remove_offer() {
+		$offer_id = $this->uri->segment(3);
+		if (empty($offer_id)) {
+			redirect('demand/');
+		}
+		$data = $this->offer_model->get_offer_by_id($offer_id);
+		$data = $data[0];
+		if ($data->user_id != $this->get_logged_in_user()) {
+			$this->session->set_flashdata('MSG','Not Authorized');
+			redirect('demand');
+		}
+		$this->offer_model->delete_offer($offer_id);
+		redirect('demand');
 	}
 
 	public function offer_form($edit_id = false) {
@@ -156,6 +183,9 @@ class Demand extends MY_Controller {
 	}
 
 	public function toggle_offer() {
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
 		$offer_id = $this->uri->segment(3);
 		if (!empty($offer_id)) {
 			$this->offer_model->toggle_offer_state($offer_id);
@@ -163,7 +193,11 @@ class Demand extends MY_Controller {
 		$this->load->library('user_agent');
 		redirect($this->agent->referrer());
 	}
+
 	public function add_offer_communication() {
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
 		$offer_id = $this->uri->segment(3);
 		if (empty($offer_id)) {
 			redirect('demand/');
@@ -187,6 +221,21 @@ class Demand extends MY_Controller {
 		else {
 			$data['to_user_id'] = $offer->user_id;
 		}
+
+		$to_user = $this->users->get_user_by_id($data['to_user_id']);
+		$this->load->library('email');
+		$this->email->from('noreply@teemw.ch');
+		$this->email->to($to_user->email);
+		$this->email->subject('Nouveau message sur annonce');
+		$mail_data = array(
+			'user_name' => $to_user->last_name." ".$to_user->first_name,
+			'comment' => $data['text'],
+			'offer_titel' => $offer->offer
+		);
+		$this->email->message($this->load->view('email/communication-html', $mail_data, TRUE));
+		$this->email->set_alt_message($this->load->view('email/communication-txt', $mail_data, TRUE));
+		$this->email->send();
+
 		$this->offer_communication_model->create_offer_communication($data);
 		redirect('demand/get_offer/'.$offer_id);
 	}

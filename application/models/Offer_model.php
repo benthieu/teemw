@@ -18,10 +18,31 @@ class Offer_model extends CI_Model
 		parent::__construct();
 	}
 
-	function get_offer_list()
+	function get_offer_list($filter_by_text = NULL, $filter_by_type = NULL)
 	{
+		$this->db->distinct();
 		$this->db->select('*');
 		$this->db->from('offer');
+		$where = '';
+		if (!empty($filter_by_text)) {
+			$where .= "(users.first_name LIKE '%".$filter_by_text."%' OR
+												users.last_name LIKE '%".$filter_by_text."%' OR
+												offer.offer LIKE '%".$filter_by_text."%' OR
+												offer.start_street LIKE '%".$filter_by_text."%' OR
+												offer.start_place LIKE '%".$filter_by_text."%' OR
+												offer.destination_street LIKE '%".$filter_by_text."%' OR
+												offer.destination_place LIKE '%".$filter_by_text."%')";
+		}
+		if (!empty($filter_by_type)) {
+			if (!empty($where)) {
+				$where .= " AND ";
+			}
+			$where .= "(offer.offer_type = '".$filter_by_type."')";
+		}
+		if (!empty($where)) {
+		$this->db->join('users', 'users.id = offer.user_id', 'left outer');
+		$this->db->where($where);
+		}
 		$this->db->order_by('date', 'DESC');
 		$query=$this->db->get();
 		$result = $query->result();

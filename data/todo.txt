@@ -1,8 +1,3 @@
-- finish detail view
-  - delete offer (1)
-- my offers list (1)
 - map overview (0)
-- communication
-  - send mail (2)
 - translate to english
-- search offers (filter)
+- contact form

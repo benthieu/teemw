@@ -4,6 +4,41 @@
   <span style="color: red;"><?php
     echo $this->session->flashdata('MSG');
   ?></span>
+	<?php
+	if (empty($user_id)) {
+ 	?>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">Filtre</h3>
+		</div>
+		<div class="panel-body">
+			<form class="navbar-form" method="POST" action="<?php echo base_url(); ?>demand/" role="search">
+
+				<input type="text" class="form-control" value="<?php echo $_POST['filter_by_text']; ?>" placeholder="<?php echo lang('search_ads') ?>" name="filter_by_text">
+				<?php
+				$field_by_type = $_POST['filter_by_type'];
+				?>
+				<select name="filter_by_type" class="form-control">
+					<option <?php echo (empty($field_by_type) ? 'selected' : ''); ?> value="">(Toutes les types)</option>
+					<option <?php echo (($field_by_type === 'dem') ? 'selected' : ''); ?> value="dem"><?php echo lang('move') ?></option>
+					<option <?php echo (($field_by_type === 'veh') ? 'selected' : ''); ?> value="veh"><?php echo lang('vehicles') ?></option>
+					<option <?php echo (($field_by_type === 'per') ? 'selected' : ''); ?> value="per"><?php echo lang('people') ?></option>
+					<option <?php echo (($field_by_type === 'obj') ? 'selected' : ''); ?> value="obj"><?php echo lang('various_objects') ?></option>
+				</select>
+				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i> Chercher</button>
+				<?php
+				if (!empty($_POST['filter_by_text']) || !empty($_POST['filter_by_type'])) {
+					?>
+					<a class="btn btn-warning" href="<?php echo base_url(); ?>demand">Effacer filtre</a>
+					<?php
+				}
+				?>
+			</form>
+		</div>
+	</div>
+	<?php
+	}
+ 	?>
 <table class="table table-hover table-striped" style="border-bottom: 2px solid #666">
   <tbody>
   <?php for ($i = 0; $i < count($offer_list); ++$i) {

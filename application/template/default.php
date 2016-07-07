@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo 'active';
               }?>">
 
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><?php echo lang('user') ?><span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<?php echo lang('user') ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li <?php if (($class == 'demand' && $method == 'get_my_offers')) {
                     echo 'class="active"';
@@ -118,15 +118,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
             ?>
           </ul>
-
-          <form class="navbar-form" role="search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="<?php echo lang('search_ads') ?>" name="q">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-            </div>
-          </form>
+          <?php
+          if ($is_logged) {
+            ?>
+            <form class="navbar-form" method="POST" action="<?php echo base_url(); ?>demand/" role="search">
+              <div class="input-group">
+                  <input type="text" class="form-control" value="<?php echo $_POST['filter_by_text']; ?>" placeholder="<?php echo lang('search_ads') ?>" name="filter_by_text">
+                  <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                  </div>
+              </div>
+            </form>
+            <?php
+          }
+          ?>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
