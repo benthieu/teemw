@@ -1,7 +1,12 @@
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 70%;
+      width: auto;
       margin: auto;
+  }
+
+  img:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
   }
 
 

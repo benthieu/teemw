@@ -18,25 +18,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="item active">
         <a href="#"><img src="img/transport.jpg" /></a>
         <div class="carousel-caption">
-        <h2>TRANSPORT</h2>
+        <h1 class="">TRANSPORT</h1>
         </div>
       </div>
       <div class="item">
         <a href="#"><img src="img/ecologie.jpg" /></a>
         <div class="carousel-caption">
-        <h2>ECOLOGIE</h2>
+        <h1>ECOLOGIE</h1>
         </div>
       </div>
       <div class="item">
         <a href="#"><img src="img/economie.jpg" /></a>
         <div class="carousel-caption">
-            <h2>ECONOMIE</h2>
+            <h1>ECONOMIE</h1>
         </div>
       </div>
       <div class="item">
         <a href="#"><img src="img/marchandises.jpg" /></a>
         <div class="carousel-caption">
-            <h2>MARCHANDISE/WARE</h2>
+            <h1>MARCHANDISE / WARE</h1>
         </div>
       </div>
     </div>
