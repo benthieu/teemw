@@ -182,8 +182,8 @@
           directionsDisplay.setMap(map); // map should be already initialized.
 
           // get the travelmode, startpoint and via point from the form
-          var start = '<?php echo $offer->start_street; ?>, <?php echo $offer->start_place.", ".$offer->start_zip_code; ?>, CH';
-          var end = '<?php echo $offer->destination_street; ?>, <?php echo $offer->destination_place.", ".$offer->destination_zip_code; ?>, CH';
+          var start = '<?php echo addslashes($offer->start_street); ?>, <?php echo $offer->start_place.", ".$offer->start_zip_code; ?>, CH';
+          var end = '<?php echo addslashes($offer->destination_street); ?>, <?php echo $offer->destination_place.", ".$offer->destination_zip_code; ?>, CH';
           // compose a array with options for the directions/route request
           var request = {
             origin: start,
