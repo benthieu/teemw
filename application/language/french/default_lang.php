@@ -3,7 +3,7 @@
 $lang['landing_page'] = 'TEEMW - Une autre façon de transporter';
 $lang['search_ads'] = 'Rechercher une annonce';
 $lang['register_transporter'] = 'Enregistrer transporteur';
-$lang['register_user'] = 'Enregistrer utilisateur';
+$lang['register_user'] = 'Enregistrer annonceur';
 $lang['modify'] = 'Modifier';
 $lang['logout'] = 'Se déconnecter';
 $lang['ads'] = 'Les annonces';
@@ -61,3 +61,4 @@ $lang['explanation'] = 'A propos de notre site';
 $lang['contact_us'] = 'Nous contacter';
 $lang['form_validation_required']		= 'Bla {field} field bla required.';
 $lang['french'] = 'Français';
+$lang['language'] = 'Langue';

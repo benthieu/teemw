@@ -118,7 +118,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
     ?>
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language<span class="caret"></span></a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo lang('language') ?><span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li <?php if($this->session->userdata('site_lang') == 'french') echo 'class="active"'; ?>><a href="<?php echo base_url(); ?>LanguageSwitcher/switchLang/french"><?php echo lang('french') ?></a></li>
         <li <?php if($this->session->userdata('site_lang') == 'english') echo 'class="active"'; ?>><a href="<?php echo base_url(); ?>LanguageSwitcher/switchLang/english">English</a></li>
