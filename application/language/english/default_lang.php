@@ -3,7 +3,7 @@
 $lang['landing_page'] = 'TEEMW - Another way to carry';
 $lang['search_ads'] = 'Search ads';
 $lang['register_transporter'] = 'Register transporter';
-$lang['register_user'] = 'Register user';
+$lang['register_user'] = 'Register advertiser';
 $lang['modify'] = 'Modify';
 $lang['logout'] = 'Logout';
 $lang['ads'] = 'Ads';
@@ -54,3 +54,8 @@ $lang['mail_adress'] = 'Email adress';
 $lang['firstname'] = 'Firstname';
 $lang['lastname'] = 'Lastname';
 $lang['phone'] = 'Phone number';
+$lang['useful_information'] = 'Useful information';
+$lang['cgu'] = 'CGU - Conditions générales d\'utilisation (only in french)';
+$lang['faq'] = 'FAQ - Foire aux questions (only in french)';
+$lang['explanation'] = 'A propos de notre site (only in french)';
+$lang['contact_us'] = 'Contact us (only in french)';

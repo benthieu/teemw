@@ -48,6 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
   </div>
+
   <style>
 .h2{
   color: white;
