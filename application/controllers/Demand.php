@@ -33,6 +33,22 @@ class Demand extends MY_Controller {
 		$this->load->view('demand/demand_list',$data);
 	}
 
+	public function get_map() {
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
+		$filter_by_text = $this->input->post('filter_by_text');
+		$filter_by_type = $this->input->post('filter_by_type');
+		$offer_result = $this->offer_model->get_offer_list($filter_by_text, $filter_by_type);
+		$data['offer_list'] = $offer_result;
+		foreach ($data['offer_list'] as &$offer) {
+			$offer->user = $this->users->get_user_by_id($offer->user_id);
+			$offer->date = date('d.m.Y', strtotime($offer->date));
+		}
+
+		$this->load->view('demand/demand_map',$data);
+	}
+
 	public function get_my_offers() {
 		if (!$this->tank_auth->is_logged_in()) {
 			redirect('/auth/login/');
