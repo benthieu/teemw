@@ -59,3 +59,4 @@ $lang['cgu'] = 'CGU - Conditions générales d\'utilisation (only in french)';
 $lang['faq'] = 'FAQ - Foire aux questions (only in french)';
 $lang['explanation'] = 'A propos de notre site (only in french)';
 $lang['contact_us'] = 'Contact us (only in french)';
+$lang['french'] = 'French';

@@ -60,3 +60,4 @@ $lang['faq'] = 'FAQ - Foire aux questions';
 $lang['explanation'] = 'A propos de notre site';
 $lang['contact_us'] = 'Nous contacter';
 $lang['form_validation_required']		= 'Bla {field} field bla required.';
+$lang['french'] = 'Français';

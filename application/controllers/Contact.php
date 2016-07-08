@@ -29,6 +29,7 @@ class Contact extends MY_Controller {
 			$this->email->message($this->load->view('email/contact-txt', $mail_data, TRUE));
 			$this->email->set_alt_message($this->load->view('email/contact-txt', $mail_data, TRUE));
 			$this->email->send();
+			$this->session->set_flashdata('MSG','E-Mail envoyé');
 		}
 		$this->load->view('informations/contact_form');
 	}
