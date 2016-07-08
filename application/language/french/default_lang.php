@@ -64,3 +64,6 @@ $lang['french'] = 'Français';
 $lang['language'] = 'Langue';
 $lang['list'] = 'Liste';
 $lang['map'] = 'Carte';
+$lang['communicate'] = 'Communiquer';
+$lang['send'] = 'Envoyer';
+$lang['choose_user'] = 'Veuillez choisir un utilisateur';

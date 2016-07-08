@@ -236,7 +236,7 @@
     <br>
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h3 class="panel-title">Communicate</h3>
+        <h3 class="panel-title"><?php echo lang('communicate') ?></h3>
       </div>
       <div class="panel-body">
         <form method="POST" action="<?php echo base_url(); ?>demand/add_offer_communication/<?php echo $offer->id; ?>">
@@ -245,7 +245,7 @@
           if ($offer->user_id == $this->tank_auth->get_user_id())  {
             ?>
       			<select name="communication_partner" id="communication_partner" class="form-control">
-      				<option value="-1">Please chose a user</option>
+      				<option value="-1"><?php echo lang('choose_user') ?></option>
               <?php
                 foreach($offer->communication as $user_id => $data) {
                   echo "<option value='".$user_id."'>".$data['user']->last_name." ".$data['user']->first_name."</option>";
@@ -265,7 +265,7 @@
           ?>
           <div class="form-group">
               <?php echo form_textarea($communication_text); ?>
-            	<button style="margin-top: 2px; width: 100%; text-align: center" type="submit" class="btn btn-primary">Send</button>
+            	<button style="margin-top: 2px; width: 100%; text-align: center" type="submit" class="btn btn-primary"><?php echo lang('send') ?></button>
           </div>
         </form>
       </div>

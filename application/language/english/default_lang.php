@@ -63,3 +63,6 @@ $lang['french'] = 'French';
 $lang['language'] = 'Language';
 $lang['list'] = 'List';
 $lang['map'] = 'Map';
+$lang['communicate'] = 'Communicate';
+$lang['send'] = 'Send';
+$lang['choose_user'] = 'Please choose an user';
