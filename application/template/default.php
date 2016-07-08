@@ -117,12 +117,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php
     }
     ?>
-    <li>
-      <select onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
-        <option value="french" <?php if($this->session->userdata('site_lang') == 'french') echo 'selected="selected"'; ?>>Français</option>
-        <option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
-      </select>
-      <p><?php echo $this->lang->line('welcome_message'); ?></p>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li <?php if($this->session->userdata('site_lang') == 'french') echo 'class="active"'; ?>><a href="<?php echo base_url(); ?>LanguageSwitcher/switchLang/french">Français</a></li>
+        <li <?php if($this->session->userdata('site_lang') == 'english') echo 'class="active"'; ?>><a href="<?php echo base_url(); ?>LanguageSwitcher/switchLang/english">English</a></li>
+      </ul>
     </li>
   </ul>
 
