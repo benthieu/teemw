@@ -76,9 +76,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="dropdown <?php if ($class == 'auth' && ($method == 'change_userdata')) {
             echo 'active';
           }?>">
-          <li <?php if ($class == 'demand' && ($method == 'index' || $method == 'get_offer' || $method == 'edit_offer')) {
+
+          <li <?php if ($class == 'demand' && ($method == 'index' || $method == 'get_offer' || $method == 'edit_offer' || $method == 'get_map')) {
             echo 'class="active"';
-          }?>><a href="<?php echo base_url(); ?>demand/index"><?php echo lang('ads') ?></a></li>
+          }?>>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo lang('ads') ?><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li <?php if ($class == 'demand' && ($method == 'index')) {
+              echo 'class="active"';
+            }?>><a href="<?php echo base_url(); ?>demand/index">List</a></li>
+            <li <?php if ($class == 'demand' && ($method == 'get_map')) {
+              echo 'class="active"';
+            }?>><a href="<?php echo base_url(); ?>demand/get_map">Map</a></li>
+          </ul>
+          </li>
+
           <li class="dropdown <?php if (($class == 'auth' && ($method == 'change_userdata')) || ($class == 'demand' && $method == 'get_my_offers')) {
             echo 'active';
           }?>">

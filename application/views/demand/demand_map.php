@@ -3,7 +3,7 @@
 	<h2>Annonces Map</h2>
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<h3 class="panel-title">Filtre</h3>
+			<h3 class="panel-title">Map</h3>
 		</div>
     <div class="panel-body" style="padding: 0">
       <!--  -->
