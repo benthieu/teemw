@@ -62,3 +62,5 @@ $lang['contact_us'] = 'Nous contacter';
 $lang['form_validation_required']		= 'Bla {field} field bla required.';
 $lang['french'] = 'Français';
 $lang['language'] = 'Langue';
+$lang['list'] = 'Liste';
+$lang['map'] = 'Carte';

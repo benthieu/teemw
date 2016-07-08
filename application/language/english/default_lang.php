@@ -61,3 +61,5 @@ $lang['explanation'] = 'A propos de notre site (only in french)';
 $lang['contact_us'] = 'Contact us (only in french)';
 $lang['french'] = 'French';
 $lang['language'] = 'Language';
+$lang['list'] = 'List';
+$lang['map'] = 'Map';
